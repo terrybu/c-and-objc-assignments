@@ -30,6 +30,19 @@ int main(int argc, const char * argv[])
         
         NSLog(@"%@", content);
         
+        //parse the content string delimited by new lines first
+        //with the current text file, it will make 3 name-address pairs
+        
+        //parse the content string delimited by comma next, make it into an array
+        //["Tiffany Lan", "Addresss"]
+        
+        //The result we want is an array of objects
+        //In a loop, as soon as you have person.name = "Tiffany Lan" and person.address = "Something", push it into that result array
+        //At the end of all the loops, you should have an array of Person objects
+        //Custom class unless you specify is mutable
+        
+        
+        
     }
     return 0;
 }
