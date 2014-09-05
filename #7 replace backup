@@ -1,0 +1,48 @@
+//
+//  main.c
+//  #7 Replace_string
+//
+//  Created by Aditya Narayan on 9/2/14.
+//  Copyright (c) 2014 NM. All rights reserved.
+//
+
+#include <stdio.h>
+#define MAX 100
+
+int main(int argc, const char * argv[])
+{
+    char left[MAX];
+    char mid[MAX];
+    char right[MAX];
+    const char test[] = "This is a test";
+    for (int i=0; i < strlen(test); i++) {
+        if (test[i] == 't') {
+            /* if checked character equals 't' and the next character equals 'e' -> replace with ghost */
+            if (test[i+1] == 'e') {
+                size_t len = strlen(left);
+                left[len] = 'g';
+                left[len+1] = 'h';
+                left[len+2] = 'o';
+                left[len+3] = '\0';
+                i++; /* you need to increment i so that it skips over this e */
+            }
+            /* if checked character equals 't' but the next character doesn't equal 'e' -> just add the t */
+            else {
+                size_t len = strlen(left);
+                left[len] = test[i];
+                left[len+1] = '\0';
+            }
+        }
+        /* if the checked character doesn't equal 't' -> just  */
+        else {
+            size_t len = strlen(left);
+            left[len] = test[i];
+            left[len+1] = '\0';
+        }
+    }
+    puts(left);
+    
+    
+    return 0;
+}
+
