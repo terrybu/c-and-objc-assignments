@@ -38,6 +38,7 @@
 }
 
 - (void) setValue:(id)value forKey:(id)key {
+    //Duplicates Test
     //if the array already has that key, don't add any new keys or values
     //find the index of the key, and replace the old value with the new value
     if ([self.keys containsObject:key]) {
