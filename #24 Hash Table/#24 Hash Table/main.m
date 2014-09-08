@@ -23,8 +23,8 @@ int main(int argc, const char * argv[])
         //you can get the value if you know the key
         //you can get the key if you know the value
         
-        NSArray *keyArray = @[@"Animal", @"Bug", @"Human"];
-        NSArray *valueArray = @[@"Horse", @"Praying Mantis", @"John"];
+        NSMutableArray *keyArray = [[NSMutableArray alloc] initWithObjects: @"Animal", @"Bug", @"Human", nil];
+        NSMutableArray *valueArray = [[NSMutableArray alloc] initWithObjects:@"Horse", @"Praying Mantis", @"John", nil];
         
         TBDictionary *test = [[TBDictionary alloc]init];
         test.keys = keyArray;
@@ -33,8 +33,10 @@ int main(int argc, const char * argv[])
         //pseudocode
         
         NSLog(test.keys.description);
-        [test findValueAtKey:@"Bug"];
-        [test findKeyAtValue:@"John"];
+        [test findValueAtKey:@"Bug"]; //should return praying mantis
+        [test findKeyAtValue:@"John"]; //should return human
+        [test setValue:@"Obama" forKey:@"President"];
+        [test findValueAtKey:@"President"];
         
     }
     return 0;
