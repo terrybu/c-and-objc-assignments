@@ -13,7 +13,6 @@ int main(int argc, const char * argv[])
 {
 
     @autoreleasepool {
-        
         //Make your own dictionary
         //Key and a value is always connected
         //A Hash table, dictionary or an ASSOCIATIVE ARRAY are all same things
@@ -23,21 +22,21 @@ int main(int argc, const char * argv[])
         //you can get the value if you know the key
         //you can get the key if you know the value
         
-        NSMutableArray *keyArray = [[NSMutableArray alloc] initWithObjects: @"Animal", @"Bug", @"Human", nil];
-        NSMutableArray *valueArray = [[NSMutableArray alloc] initWithObjects:@"Horse", @"Praying Mantis", @"John", nil];
+        TBDictionary *myTBDict = [[TBDictionary alloc]init];
         
-        TBDictionary *test = [[TBDictionary alloc]init];
-        test.keys = keyArray;
-        test.values = valueArray;
-        
-        //pseudocode
-        
-        NSLog(test.keys.description);
-        [test findValueAtKey:@"Bug"]; //should return praying mantis
-        [test findKeyAtValue:@"John"]; //should return human
-        [test setValue:@"Obama" forKey:@"President"];
-        [test findValueAtKey:@"President"];
-        
+        [myTBDict setValue:@"Obama" forKey:@"President"];
+        [myTBDict setValue:@"Tiger" forKey:@"Animal"];
+        [myTBDict setValue:@"Praying Mantis" forKey:@"Bug"];
+        [myTBDict setValue:@"Knife" forKey:@"Weapon"];
+
+        NSLog(@"Keys: %@", myTBDict.keys.description);
+        NSLog(@"Values: %@", myTBDict.values.description);
+
+        [myTBDict findValueAtKey:@"Bug"]; //should return praying mantis
+        [myTBDict findValueAtKey:@"President"]; //should return obama
+        [myTBDict findKeyAtValue:@"Knife"]; //should return Weapon
+        [myTBDict findKeyAtValue:@"Tiger"]; //should return Animal
+
     }
     return 0;
 }

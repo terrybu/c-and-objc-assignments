@@ -1,6 +1,6 @@
 //
 //  TBDictionary.m
-//  #24 Hash Table
+//  #25 Use Your Hash Table
 //
 //  Created by Aditya Narayan on 9/8/14.
 //  Copyright (c) 2014 NM. All rights reserved.
@@ -29,7 +29,7 @@
     NSLog(@"%@", resultValue);
 }
 
-- (void) findKeyAtValue:(NSString *)value {
+- (void) findKeyAtValue:(id)value {
     NSUInteger index = [self.values indexOfObject:value];
     //then find the value with the same key in the keys array
     NSString *resultKey = self.keys[index];
@@ -37,7 +37,7 @@
     NSLog(@"%@", resultKey);
 }
 
-- (void) setValue:(NSString *)value forKey:(id)key {
+- (void) setValue:(id)value forKey:(id)key {
     //put the value and the key into the respective arrays
     [self.keys addObject:key];
     [self.values addObject: value];
