@@ -14,12 +14,12 @@ int main(int argc, const char * argv[])
 
     @autoreleasepool {
         
-        Person *person1 = [[Person alloc] init]; //alloc is allocating memory and init initializes the object
-        person1.name = @"Terry Bu";
-        person1.address = @"2111 21st Rd, Astoria NY 11105";
-        
-//        NSLog(@"Hello, %@!", person1.name);
-//        NSLog(@"%@", person1.address);
+//    Person *person1 = [[Person alloc] init]; //alloc is allocating memory and init initializes the object
+//    person1.name = @"Terry Bu";
+//    person1.address = @"2111 21st Rd, Astoria NY 11105";
+
+    //        NSLog(@"Hello, %@!", person1.name);
+    //        NSLog(@"%@", person1.address);
         
         //read from a file
         //*I originally had some path below involving NSBundle Mainbundle but it didn't work. Once simplified down to string form like below, it works
@@ -29,16 +29,14 @@ int main(int argc, const char * argv[])
         
 //        NSLog(@"%@", content);
         //parse the content string delimited by new lines first
-        //with the current text file, it will make 3 name-address pairs
         
         NSArray *lines = [content componentsSeparatedByString:@"\n"];
-        NSUInteger lines_count = [lines count];
-        NSLog(@"Jarvis says the # of lines we found in that file is %lu", (unsigned long)lines_count);
+        NSLog(@"Jarvis says the # of lines we found in that file is %lu lines!\n", (unsigned long)lines.count);
         
         //when you initiate NSMutableArrays, remember to allocate it and then initialize it with nil like this. Otherwise it will throw errors when you try to addobjects to it
         NSMutableArray *resultArray = [[NSMutableArray alloc] initWithObjects: nil];
         
-        for (int i = 0; i < lines_count; i++) {
+        for (int i = 0; i < lines.count; i++) {
             NSString *line_target = lines[i];
             NSArray *pair = [line_target componentsSeparatedByString:@", "];
             //now in pair array, we have name at pair[0] and address pair[1]
@@ -50,13 +48,32 @@ int main(int argc, const char * argv[])
             [resultArray addObject:person];
         }
         
-        //final resultarray output test
-        NSLog(@"%@", [resultArray description]);
+        //final resultarray output test - it should output a bunch of Person objects addresses Person: 0x1005....
+        NSLog(@"%@", resultArray.description);
 
-        //just for testing purposes, loop through the resultarray, output all names and addresses
-        for (int i = 0; i < [resultArray count]; i++) {
-            NSLog(@"%@ lives at %@", [resultArray[i] name], [resultArray[i] address]);
+        //just for testing purposes, loop through the result array, output all names and addresses
+        for (int i = 0; i < resultArray.count; i++) {
+            Person *person = resultArray[i];
+            NSLog(@"%@ lives at %@", person.name, person.address);
         }
+        
+        //identify duplicate names by using NSMutableDictionary by using names as keys and the objects as values
+        NSMutableDictionary *myDictionary = [[NSMutableDictionary alloc]init];
+        
+        for (int i=0; i < resultArray.count; i++) {
+            Person * person = resultArray[i];
+            myDictionary[person.name] = person;
+            //shorthand syntax for adding key-value pairs into a Dictionary
+        }
+        
+        NSLog(@"\nHere is your MutableDictionary Results:\n*************\n");
+        NSLog(myDictionary.description);
+
+        //output should print out ape sh*t crazy which is the value for the SECOND key-value pair for Duplicate Man
+        NSLog([myDictionary[@"Duplicate Man"] address]);
+        
+        //When you make a NSMutable Dictionary, and you use duplicate keys, the initial key's value gets over-written by the 2nd key's value. You cannot have multiple keys in a dictionary, it won't list out like arrays, instead, they get overwritten. A good thing to remember.
+        
         
     }
     return 0;

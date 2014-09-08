@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>B53EBD86-BD22-44AB-ADDA-B7983163EE6F</string>
+	<key>IDESourceControlProjectName</key>
+	<string>#24 Hash Table</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>C30555FC-48FA-4A88-9CEB-03E0199F37CE</key>
+		<string>https://github.com/bucifer/c-and-objc-assignments.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>#24 Hash Table/#24 Hash Table.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>C30555FC-48FA-4A88-9CEB-03E0199F37CE</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/bucifer/c-and-objc-assignments.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>C30555FC-48FA-4A88-9CEB-03E0199F37CE</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C30555FC-48FA-4A88-9CEB-03E0199F37CE</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Assignments Completed</string>
+		</dict>
+	</array>
+</dict>
+</plist>
