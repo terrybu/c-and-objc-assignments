@@ -24,7 +24,7 @@ int main(int argc, const char * argv[])
         //read from a file
         //*I originally had some path below involving NSBundle Mainbundle but it didn't work. Once simplified down to string form like below, it works
         
-        NSString* path = @"/Users/adityanarayan/Desktop/TerryBu/Input_Folder/names&addresses.txt";
+        NSString* path = @"/Users/adityanarayan/Desktop/TerryBu/Assignments Completed/Input_Folder/names&addresses.txt";
         NSString* content = [NSString stringWithContentsOfFile:path encoding:NSASCIIStringEncoding error:NULL];
         
 //        NSLog(@"%@", content);

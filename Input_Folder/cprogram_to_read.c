@@ -5,6 +5,8 @@
 //  Created by Aditya Narayan on 9/4/14.
 //  Copyright (c) 2014 NM. All rights reserved.
 //
+/* 8th comment line
+/* 9th comment line 
 
 #include <stdio.h>
 
@@ -13,7 +15,7 @@ void read_into_string(char result_string[], char file_path[]);
 int main(int argc, const char * argv[])
 {
     char this_is_the_result_string[100];
-    read_into_string(this_is_the_result_string, "/Users/adityanarayan/Desktop/TerryBu/Assignments Completed/Input_Folder/test.txt");
+    read_into_string(this_is_the_result_string, "/Users/adityanarayan/Desktop/TerryBu/test.txt");
     
     return 0;
 }

@@ -14,7 +14,7 @@ int main(int argc, const char * argv[])
 {
     
     @autoreleasepool {
-        NSString* path = @"/Users/adityanarayan/Desktop/TerryBu/Input_Folder/names&addresses.txt";
+        NSString* path = @"/Users/adityanarayan/Desktop/TerryBu/Assignments Completed/Input_Folder/names&addresses.txt";
         NSString* content = [NSString stringWithContentsOfFile:path encoding:NSASCIIStringEncoding error:NULL];
         NSArray *lines = [content componentsSeparatedByString:@"\n"];
         NSLog(@"Jarvis says the # of lines we found in that file is %lu lines!\n", (unsigned long)lines.count);

@@ -12,7 +12,7 @@ void count_lines_all_comments(char file_path[]);
 
 int main(int argc, const char * argv[])
 {
-    count_lines_all_comments("/Users/adityanarayan/Desktop/TerryBu/Input_Folder/cprogram_to_read.c");
+    count_lines_all_comments("/Users/adityanarayan/Desktop/TerryBu/Assignments Completed/Input_Folder/cprogram_to_read.c");
     return 0;
 }
 

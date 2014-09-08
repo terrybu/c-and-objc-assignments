@@ -13,7 +13,7 @@ void count_lines(char file_path[]);
 int main(int argc, const char * argv[])
 {
     
-    count_lines("/Users/adityanarayan/Desktop/TerryBu/Input_Folder/cprogram_to_read.c");
+    count_lines("/Users/adityanarayan/Desktop/TerryBu/Assignments Completed/Input_Folder/cprogram_to_read.c");
     return 0;
 }
 
