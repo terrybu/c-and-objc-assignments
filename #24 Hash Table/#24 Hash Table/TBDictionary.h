@@ -10,10 +10,11 @@
 
 @interface TBDictionary : NSObject
 - (void) sayHello;
-- (void) findValueAtKey:(NSString *)key;
+- (void) findValueAtKey:(id)key;
 - (void) findKeyAtValue:(NSString *)value;
+- (void) setValue:(NSString *)value forKey:(id)key;
 
-@property NSArray *keys;
-@property NSArray *values;
+@property NSMutableArray *keys;
+@property NSMutableArray *values;
 
 @end

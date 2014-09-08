@@ -15,19 +15,14 @@
     NSLog(@"Hello, I'm TBDictionary");
 }
 
-- (void) findValueAtKey:(NSString *)key {
-    //you have an array of values
-    //you have an array of keys
-    
+- (void) findValueAtKey:(id)key {
     //find the index of the passed argument key out of the keys arrays
     //What index is it?
     
     NSUInteger index = [self.keys indexOfObject:key];
     
     //then find the value with the same index in the values array
-    
     NSString *resultValue = self.values[index];
-    
     
     NSLog(@"%@", resultValue);
 }
@@ -38,6 +33,12 @@
     NSString *resultKey = self.keys[index];
     
     NSLog(@"%@", resultKey);
+}
+
+- (void) setValue:(NSString *)value forKey:(id)key {
+    //put the value and the key into the respective arrays
+    [self.keys addObject:key];
+    [self.values addObject: value];
 }
 
 
