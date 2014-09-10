@@ -8,7 +8,6 @@
 
 #include <stdio.h>
 #include <string.h>
-#define MAX 100
 //one way is setting a hard-coded MAX but there will be a limit
 //another way is malloc (setting aside memory for the length of the string)
 
@@ -16,24 +15,27 @@ void replace_string(char test[]);
 
 int main(int argc, const char * argv[])
 {
-    char user_string[] = "This is a test";
+    char user_string[] = "This is a testdtfsadjfsdjfpiasfjpsdifjapsistfsdfhasofjpsdiffsdkjfsapfjpsdfjsapifjpsaifjsiapdfjpsaifjpsidf";
+//    printf("%lu\n", strlen(user_string));
     replace_string(user_string);
     return 0;
 }
 
 void replace_string(char user_string[]) {
     
+    // dynamically allocate memory for two temporary strings(left and right) based on the size of user input string
     int string_len = strlen(user_string) + 1;
-    char* test = (char*) malloc(string_len * sizeof(char));
-    char password[] = "hey dawg";
-    strcpy(test, password);
+    // malloc left some garbarge in the memory - calloc initializes the memory cleanly
+    char *left = (char*) calloc(string_len, sizeof(char));
+    char *right = (char*) calloc(string_len, sizeof(char));
+    char ghost[4] = "gho";
     
-    printf("%s \n", test);
-
+    if (left == NULL || right == NULL)
+    {
+        printf("ERROR: Out of memory\n");
+        return;
+    }
     
-    char left[] = "";
-    char ghost[10] = "gho";
-    char right[MAX];
     int booleanFoundTe = 0;
     /* keep adding character to left array unless you hit 't' and 'e' consecutively */
     for (int i=0; i < strlen(user_string); i++) {
@@ -56,4 +58,6 @@ void replace_string(char user_string[]) {
         printf("%s\n", left);
     }
     
+    free(left);
+    free(right);
 }
