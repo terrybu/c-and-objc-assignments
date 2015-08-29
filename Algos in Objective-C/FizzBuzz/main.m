@@ -28,6 +28,21 @@ int main(int argc, const char * argv[]) {
         
         NSLog(@"%@", [ObjectiveCPracticeAlgoManager returnOurNewAutoCompleteString:string wordsSet:set]);
         
+        NSArray *array = @[@"sup", @"hi"];
+        if ([array containsObject:@"sup"]) {
+            NSLog(@"yes contains sup");
+        }
+        NSMutableArray *mutableArray = [[NSMutableArray alloc]initWithArray:array];
+        [mutableArray addObject:@"extra"];
+        NSLog(mutableArray.description);
+        
+        int a = 10;
+        double dub = 2.424242;
+        NSLog(@"%d %f", a, dub);
+        
+        NSString *testStr = @"flip this";
+        NSLog(@"%@", [ObjectiveCPracticeAlgoManager reverseString:testStr]);
+        
     }
     return 0;
 }

@@ -10,8 +10,11 @@
 
 @interface ObjectiveCPracticeAlgoManager : NSObject
 
-+ (void) runFizzBuzz: (int[]) array;
 
+
++ (void) runFizzBuzz: (int[]) array;
 + (NSString *) returnOurNewAutoCompleteString: (NSString *) string wordsSet: (NSSet *) set;
++ (NSString *) reverseString: (NSString *) string;
+
 
 @end

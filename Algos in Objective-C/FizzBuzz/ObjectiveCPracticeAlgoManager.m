@@ -11,6 +11,17 @@
 @implementation ObjectiveCPracticeAlgoManager
 
 
++ (NSString *) reverseString: (NSString *) string {
+    NSMutableString *mutableStr = [[NSMutableString alloc]init];
+    NSInteger lastIndex = string.length-1;
+    while (lastIndex >= 0) {
+        NSString *oneCharacter = [string substringWithRange:NSMakeRange(lastIndex, 1)];
+        [mutableStr appendString:oneCharacter];
+        lastIndex--;
+    }
+    return mutableStr;
+}
+
 + (void) runFizzBuzz: (int[]) array {
     for (int i=0; i < 5; i++) {
         int value = (int) array[i];
